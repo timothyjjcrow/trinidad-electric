@@ -2,6 +2,55 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // ============================================================================
+  // MOBILE NAVIGATION FUNCTIONALITY
+  // ============================================================================
+  const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+  const mobileNav = document.querySelector(".main-nav");
+  const navLinks = document.querySelectorAll(".main-nav a");
+
+  if (mobileMenuBtn && mobileNav) {
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener("click", function () {
+      this.classList.toggle("active");
+      mobileNav.classList.toggle("active");
+
+      // Toggle body scroll when menu is open
+      if (mobileNav.classList.contains("active")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    });
+
+    // Close menu when clicking on nav links
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        mobileMenuBtn.classList.remove("active");
+        mobileNav.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (e) {
+      if (!mobileNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenuBtn.classList.remove("active");
+        mobileNav.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+
+    // Close menu on window resize if screen becomes larger
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) {
+        mobileMenuBtn.classList.remove("active");
+        mobileNav.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  }
+
+  // ============================================================================
   // SMOOTH SCROLLING FOR ANCHOR LINKS
   // ============================================================================
   const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
