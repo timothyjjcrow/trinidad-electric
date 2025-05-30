@@ -1,0 +1,60 @@
+{
+  "business_information": {
+    "business_name": "Trinidad Electric",
+    "logo": "Available on website",
+    "primary_phone": "(707) 834-2156",
+    "email": "Not explicitly listed",
+    "mailing_address": "P.O. Box 936, Trinidad, CA 95570",
+    "shipping_address": "218 Quarry Rd, Trinidad, CA 95570",
+    "service_areas": ["Humboldt County", "Trinidad", "Arcata", "Manila"],
+    "operating_hours": "Monday – Friday 8:00am - 4:30pm",
+    "emergency_service": "24-hour emergency electrical service throughout Humboldt County",
+    "licenses": "CA State License #681965 C10 C46"
+  },
+  "service_information": {
+    "main_services": [
+      "Commercial Installation and Maintenance",
+      "Residential Installation and Maintenance",
+      "24-hour emergency electrical service",
+      "Code compliant installations"
+    ],
+    "specializations": [
+      "National Electric Code (NEC) compliant installations",
+      "Emergency electrical service",
+      "Commercial electrical work",
+      "Residential electrical work"
+    ],
+    "service_descriptions": {
+      "emergency_service": "24-hour emergency electrical service throughout humboldt county",
+      "installation_maintenance": "Commercial/Residential Installation and Maintenance",
+      "code_compliance": "Code compliant installations are our priority"
+    }
+  },
+  "credibility_trust_signals": {
+    "years_in_business": "Established company",
+    "certifications": "California certified electricians",
+    "owner_credentials": "Owner Grant Lay is an Instructor for College of the Redwoods and teaches electrical classes including NEC focus",
+    "team": "California certified electricians, electrician trainees, office managers, President and Vice President",
+    "mission": "Provide electrical service whether they are business owners, homeowners, landlords, tenants, or general or other types of contractors, while always maintaining the standards of the National Electric Code (NEC)",
+    "coverage": "Office in Arcata and construction yard in Manila affording ability to cover all corners of Humboldt County",
+    "testimonials": "Not currently displayed"
+  },
+  "visual_content": {
+    "images_mentioned": ["IMG_9024.jpg", "IMG_5351.jpg", "IMG_4064.jpg"],
+    "image_types": ["Staff photos", "Work examples", "Service photos"]
+  },
+  "cta_mechanisms": {
+    "primary_phone": "(707) 834-2156",
+    "contact_form": "Not explicitly mentioned",
+    "emergency_contact": "After Hours and Weekend Emergency Service available"
+  },
+  "current_website_structure": {
+    "pages": ["Who We Are", "What We Do", "Contact"],
+    "sections": [
+      "Business overview",
+      "Staff information",
+      "Location details",
+      "Hours of operation"
+    ]
+  }
+}
