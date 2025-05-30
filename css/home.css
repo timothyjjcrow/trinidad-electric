@@ -14,6 +14,22 @@
   align-items: center;
 }
 
+/* Hero Background with Parallax Effect */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 1;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -21,13 +37,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
@@ -523,5 +539,85 @@
 
   .trust-item {
     padding: 1.5rem;
+  }
+}
+
+/* Professional Fleet Section */
+.professional-fleet {
+  padding: 5rem 0;
+  background: #f8fafc;
+}
+
+.fleet-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fleet-text h2 {
+  font-size: 2.5rem;
+  color: #1a365d;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.fleet-text p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.fleet-features {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.fleet-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #2563eb;
+}
+
+.fleet-feature i {
+  font-size: 1.2rem;
+}
+
+.fleet-image {
+  position: relative;
+}
+
+.van-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.van-image:hover {
+  transform: scale(1.02);
+}
+
+/* Mobile responsiveness for fleet section */
+@media (max-width: 768px) {
+  .fleet-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .fleet-text h2 {
+    font-size: 2rem;
+  }
+
+  .fleet-features {
+    justify-content: center;
   }
 }

@@ -51,6 +51,38 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ============================================================================
+  // PARALLAX SCROLLING EFFECT
+  // ============================================================================
+  const heroBg = document.querySelector(".hero-bg");
+
+  if (heroBg) {
+    let ticking = false;
+
+    function updateParallax() {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.5;
+
+      // Apply transform for parallax effect
+      heroBg.style.transform = `translateY(${rate}px)`;
+
+      ticking = false;
+    }
+
+    function requestParallaxUpdate() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+
+    // Add scroll listener for parallax effect
+    window.addEventListener("scroll", requestParallaxUpdate);
+
+    // Initial call
+    updateParallax();
+  }
+
+  // ============================================================================
   // SMOOTH SCROLLING FOR ANCHOR LINKS
   // ============================================================================
   const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
