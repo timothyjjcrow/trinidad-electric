@@ -55,17 +55,21 @@ document.addEventListener("DOMContentLoaded", function () {
   // ============================================================================
   const heroBg = document.querySelector(".hero-bg");
 
-  if (heroBg && window.innerWidth > 768) {
+  // Emergency fallback - set to true to disable parallax completely
+  const disableParallax = false;
+
+  if (heroBg && window.innerWidth > 768 && !disableParallax) {
     // Only enable parallax on desktop
     let ticking = false;
 
     function updateParallax() {
       const scrolled = window.pageYOffset;
-      const rate = scrolled * -0.3; // Reduced from -0.5 to -0.3 for less movement
-      const maxScroll = window.innerHeight; // Limit parallax to viewport height
+      const rate = scrolled * -0.2; // Further reduced from -0.3 to -0.2 for minimal movement
+      const maxScroll = window.innerHeight * 0.8; // Reduced scroll limit to 80% of viewport
 
-      // Only apply parallax within reasonable scroll bounds
-      if (scrolled <= maxScroll) {
+      // Only apply parallax within very limited scroll bounds
+      if (scrolled <= maxScroll && rate >= -100) {
+        // Added minimum bound to prevent over-movement
         heroBg.style.transform = `translateY(${rate}px)`;
       }
 
@@ -92,6 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
         window.removeEventListener("scroll", requestParallaxUpdate);
       }
     });
+  } else if (heroBg) {
+    // Fallback: ensure static background positioning
+    heroBg.style.transform = "none";
+    heroBg.style.backgroundAttachment = "scroll";
   }
 
   // ============================================================================

@@ -17,10 +17,10 @@
 /* Hero Background with Parallax Effect */
 .hero-bg {
   position: absolute;
-  top: -10%;
+  top: -20%;
   left: 0;
   width: 100%;
-  height: 130%;
+  height: 150%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -37,7 +37,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.85);
   z-index: 2;
 }
 
@@ -55,7 +55,8 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+  color: white;
 }
 
 .hero-subtitle {
@@ -66,6 +67,8 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+  color: white;
 }
 
 .hero-ctas {
@@ -515,24 +518,26 @@
 
   /* Disable parallax on mobile for better performance and avoid issues */
   .hero-bg {
-    background-attachment: scroll;
-    position: absolute;
-    top: 0;
-    height: 100%;
+    background-attachment: scroll !important;
+    position: absolute !important;
+    top: 0 !important;
+    height: 100% !important;
     transform: none !important;
   }
 
-  /* Darker overlay on mobile for better text readability */
+  /* Much darker overlay on mobile for better text readability */
   .hero::before {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9) !important;
   }
 
   .hero h1 {
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 1) !important;
+    color: white !important;
   }
 
   .hero-subtitle {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1) !important;
+    color: white !important;
   }
 }
 
@@ -641,5 +646,24 @@
 
   .fleet-features {
     justify-content: center;
+  }
+}
+
+/* Additional safety for desktop parallax */
+@media (min-width: 769px) {
+  .hero h1 {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9) !important;
+    color: white !important;
+    font-weight: 700 !important;
+  }
+
+  .hero-subtitle {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9) !important;
+    color: white !important;
+  }
+
+  /* Ensure background covers fully on desktop */
+  .hero-bg {
+    min-height: 120vh !important;
   }
 }
